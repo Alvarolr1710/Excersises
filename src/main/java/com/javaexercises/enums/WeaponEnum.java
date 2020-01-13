@@ -1,8 +1,9 @@
 package com.javaexercises.enums;
 
-public enum GenderEnum {
-    MALE("Male"),
-    FEMALE("Female");
+public enum WeaponEnum {
+    SWORD("Sword"),
+    AXE("Axe"),
+    LANCE("Lance");
 
     private final String label;
 
@@ -10,7 +11,7 @@ public enum GenderEnum {
         return label;
     }
 
-    GenderEnum(String label) {
+    WeaponEnum(String label) {
         this.label = label;
     }
 }

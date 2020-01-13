@@ -7,7 +7,11 @@ public enum FamilyEnum {
     ELF("Elf"),
     DEMIWOLF("Demiwolf");
 
-    public final String label;
+    private final String label;
+
+    public String getLabel() {
+        return label;
+    }
 
     FamilyEnum(String label) {
         this.label = label;

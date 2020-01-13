@@ -7,16 +7,7 @@ import static com.javaexercises.enums.FamilyEnum.ELF;
 public class Elf extends Characters {
 
     public Elf() {
-        this.family = ELF.label;
+        this.family = ELF.getLabel();
     }
 
-    @Override
-    public void walk(int xAxis, int yAxis) {
-
-    }
-
-    @Override
-    public void attack() {
-
-    }
 }

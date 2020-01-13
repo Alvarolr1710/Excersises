@@ -3,7 +3,9 @@ package com.javaexercises;
 import com.javaexercises.behaviour.Behaviour;
 import com.javaexercises.utils.Position;
 
-public abstract class Characters implements Behaviour {
+import static com.javaexercises.enums.WeaponEnum.*;
+
+public class Characters implements Behaviour {
 
     protected String family;
     private String name;
@@ -27,10 +29,40 @@ public abstract class Characters implements Behaviour {
         this.weapon = weapon;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public String getWeapon() {
+        return weapon;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
     @Override
     public void walk(int xAxis, int yAxis) {
         position.setxAxis(position.getxAxis() + xAxis);
         position.setyAxis(position.getyAxis() + yAxis);
+    }
+
+    @Override
+    public boolean attack(Characters player2) {
+        String player2Weapon = player2.getWeapon();
+        if ((this.weapon.equalsIgnoreCase(SWORD.getLabel()) && player2Weapon.equalsIgnoreCase(AXE.getLabel())) ||
+                (this.weapon.equalsIgnoreCase(AXE.getLabel()) && player2Weapon.equalsIgnoreCase(LANCE.getLabel())) ||
+                (this.weapon.equalsIgnoreCase(LANCE.getLabel()) && player2Weapon.equalsIgnoreCase(SWORD.getLabel()))) {
+            System.out.println(this.name + " won the game");
+            return true;
+        } else {
+            System.out.println(this.name + " is dead");
+            return false;
+        }
     }
 
     @Override

@@ -7,16 +7,8 @@ import static com.javaexercises.enums.FamilyEnum.ORC;
 public class Orc extends Characters {
 
     public Orc() {
-        this.family = ORC.label;
+        this.family = ORC.getLabel();
     }
 
-    @Override
-    public void walk(int xAxis, int yAxis) {
 
-    }
-
-    @Override
-    public void attack() {
-
-    }
 }
