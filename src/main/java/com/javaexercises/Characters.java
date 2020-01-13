@@ -13,36 +13,36 @@ public class Characters implements Behaviour {
     private String weapon;
     private Position position = new Position();
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    void setGender(String gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-    void setWeapon(String weapon) {
+    public void setWeapon(String weapon) {
         this.weapon = weapon;
-    }
-
-    public String getGender() {
-        return gender;
     }
 
     public String getWeapon() {
         return weapon;
     }
 
-    public Position getPosition() {
-        return position;
+    public String getGender() {
+        return gender;
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
+    String getFamily() {
+        return family;
+    }
+
+    Position getPosition() {
+        return position;
     }
 
     @Override
@@ -54,10 +54,11 @@ public class Characters implements Behaviour {
     @Override
     public boolean attack(Characters player2) {
         String player2Weapon = player2.getWeapon();
+        System.out.println(this.name + " is fighting with " + player2.name);
         if ((this.weapon.equalsIgnoreCase(SWORD.getLabel()) && player2Weapon.equalsIgnoreCase(AXE.getLabel())) ||
                 (this.weapon.equalsIgnoreCase(AXE.getLabel()) && player2Weapon.equalsIgnoreCase(LANCE.getLabel())) ||
                 (this.weapon.equalsIgnoreCase(LANCE.getLabel()) && player2Weapon.equalsIgnoreCase(SWORD.getLabel()))) {
-            System.out.println(this.name + " won the game");
+            System.out.println(player2.getName() + " is dead");
             return true;
         } else {
             System.out.println(this.name + " is dead");
@@ -74,6 +75,11 @@ public class Characters implements Behaviour {
                 "\n  weapon: " + weapon +
                 "\n  position: (" + position.getxAxis() + "," + position.getyAxis() + ")" +
                 "\n}";
+    }
+
+    protected void setFullPosition(int x, int y) {
+        this.position.setxAxis(x);
+        this.position.setyAxis(y);
     }
 
 }

@@ -8,6 +8,7 @@ public class Elf extends Characters {
 
     public Elf() {
         this.family = ELF.getLabel();
+        setFullPosition(5, 0);
     }
 
 }

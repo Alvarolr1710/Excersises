@@ -8,7 +8,9 @@ public class Human extends Characters {
 
     public Human() {
         this.family = HUMAN.getLabel();
+        setFullPosition(0,0);
     }
+
 
 
 }

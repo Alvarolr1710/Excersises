@@ -8,7 +8,7 @@ public class Orc extends Characters {
 
     public Orc() {
         this.family = ORC.getLabel();
+        setFullPosition(5,5);
     }
-
 
 }

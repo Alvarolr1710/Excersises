@@ -4,11 +4,6 @@ public class Position {
     private int xAxis;
     private int yAxis;
 
-    public Position() {
-        this.xAxis = 0;
-        this.yAxis = 0;
-    }
-
     public int getxAxis() {
         return xAxis;
     }

@@ -8,8 +8,9 @@ public class Demiwolf extends Characters {
 
     public Demiwolf() {
         this.family = DEMIWOLF.getLabel();
-    }
+        setFullPosition(0, 5);
 
+    }
 
 
 }
